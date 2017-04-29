@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: webapi
+spec:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: webapi
+    spec:
+      containers:
+        - name: webapi
+          image: {YOUR-DOCKER-ID}/the-app
+          ports:
+            - containerPort: 80

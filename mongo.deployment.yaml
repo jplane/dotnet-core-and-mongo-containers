@@ -1,0 +1,24 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: mongodb
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: mongodb
+    spec:
+      containers:
+        - name: mongodb
+          image: bitnami/mongodb:latest
+          ports:
+            - containerPort: 27017
+          volumeMounts:
+            - name: azure
+              mountPath: /mnt/azure
+      volumes:
+        - name: azure
+          azureDisk:
+            diskName: {SOME-DATA-DISK}.vhd
+            diskURI: https://{SOME-STORAGE-ACCOUNT}.blob.core.windows.net/{SOME-DATA-DISK}.vhd
