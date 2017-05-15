@@ -26,6 +26,10 @@ Prerequisites:
 
 --------------------------------
 
+UPDATE: Here's a screencast of these demo steps in action... https://channel9.msdn.com/Blogs/MVP-Azure/Containers-Two-Ways
+
+--------------------------------
+
 1. build web api app from command line
 
     - dotnet restore
